@@ -146,7 +146,7 @@
                         <%if(!string.IsNullOrEmpty(Item.Tags)){ %>
                             <% foreach (var item in Item.Tags.Split(','))
                                {%>
-                               <a href="/tag/<%=item %>" class="tag-cloud"><%=item %></a>
+                               <a href="/lib/pages/rek/Tag.aspx?Tag=<%=item %>" class="tag-cloud"><%=item %></a>
                              <%  } %>
                         <%} %>
                         <hr/>

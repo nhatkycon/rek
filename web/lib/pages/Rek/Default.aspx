@@ -20,7 +20,7 @@
             <uc1:Newest ID="Newest1" runat="server" />            
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-            <div class="alert alert-warning">
+            <div class="well well-sm">
                 <p>
                     <i class="icon icon-facetime-video icon-large"></i> Video thú vị từ việt nam + quốc tế
                 </p>
