@@ -25,6 +25,8 @@ public partial class lib_ajax_Rek_Default : BasedPage
         var Ten = Request["Ten"];
         var Anh = Request["Anh"];
         var Txt = Request["Txt"];
+        var Tags = Request["Tags"];
+        var NoiDung = Request["NoiDung"];
         var FromDate = Request["FromDate"];
         switch (subAct)
         {
@@ -108,6 +110,8 @@ public partial class lib_ajax_Rek_Default : BasedPage
                     {
                         Item = CapNhatDal.SelectById(new Guid(Id));
                     }
+                    Item.Tags = Tags;
+                    Item.NoiDung = NoiDung;
                     Item.Ten = Ten;
                     Item.Anh = Anh;
                     Item.Loai = 3;// Video

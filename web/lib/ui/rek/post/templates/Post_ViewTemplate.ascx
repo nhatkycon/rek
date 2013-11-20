@@ -142,6 +142,17 @@
                         <div class="post-video-box video-container">
                             <iframe width="520" height="293" src="http://www.youtube.com/embed/<%=Item.VideoUrl %>" frameborder="0" allowfullscreen></iframe>                            
                         </div>
+                        <hr/>
+                        <%if(!string.IsNullOrEmpty(Item.Tags)){ %>
+                            <% foreach (var item in Item.Tags.Split(','))
+                               {%>
+                               <a href="/tag/<%=item %>" class="tag-cloud"><%=item %></a>
+                             <%  } %>
+                        <%} %>
+                        <hr/>
+                        <div class="post-content">
+                            <%=Item.NoiDung %>
+                        </div>
                     </div>                   
                 </div>
             </div>

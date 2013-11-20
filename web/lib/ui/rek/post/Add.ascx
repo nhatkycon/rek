@@ -16,6 +16,18 @@
                     size="16" 
                     type="text"
                     name="Ten"/>
+                <br />
+                <textarea name="NoiDung" 
+                class="NoiDung form-control"
+                placeholder="Làm vài dòng mô tả cho nó sinh động"
+                rows="3"></textarea>
+                <br />
+                <input placeholder="Thêm tag" 
+                    class="input-xlarge form-control Tags" 
+                    style="width: 100%;" 
+                    data-role="tagsinput"
+                    type="text"
+                    name="Tags"/>
                 <hr/>
                 <div class="well-large video-view video-container">
                     <iframe data-yid="" data-img="" id="youtube-view" style="display: none;" width="500" height="281" src="" frameborder="0" allowfullscreen></iframe>

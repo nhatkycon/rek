@@ -933,6 +933,7 @@ namespace docsoft.entities
         public Guid AB_ID { get; set; }
         public String Anh { get; set; }
         public DateTime NgayViet { get; set; }
+        public String Tags { get; set; }
         #endregion
         #region Contructor
         public CapNhat()
@@ -969,7 +970,7 @@ namespace docsoft.entities
         public static CapNhat Insert(CapNhat item)
         {
             var Item = new CapNhat();
-            var obj = new SqlParameter[17];
+            var obj = new SqlParameter[18];
             obj[0] = new SqlParameter("U_ID", item.ID);
             obj[1] = new SqlParameter("U_P_ID", item.P_ID);
             obj[2] = new SqlParameter("U_Loai", item.Loai);
@@ -1008,6 +1009,7 @@ namespace docsoft.entities
             {
                 obj[16] = new SqlParameter("U_NgayViet", DBNull.Value);
             }
+            obj[17] = new SqlParameter("U_Tags", item.Tags);
 
             using (IDataReader rd = SqlHelper.ExecuteReader(DAL.con(), CommandType.StoredProcedure, "sp_tblCapNhat_Insert_InsertNormal_linhnx", obj))
             {
@@ -1022,7 +1024,7 @@ namespace docsoft.entities
         public static CapNhat Update(CapNhat item)
         {
             var Item = new CapNhat();
-            var obj = new SqlParameter[17];
+            var obj = new SqlParameter[18];
             obj[0] = new SqlParameter("U_ID", item.ID);
             obj[1] = new SqlParameter("U_P_ID", item.P_ID);
             obj[2] = new SqlParameter("U_Loai", item.Loai);
@@ -1061,7 +1063,7 @@ namespace docsoft.entities
             {
                 obj[16] = new SqlParameter("U_NgayViet", DBNull.Value);
             }
-
+            obj[17] = new SqlParameter("U_Tags", item.Tags);
             using (IDataReader rd = SqlHelper.ExecuteReader(DAL.con(), CommandType.StoredProcedure, "sp_tblCapNhat_Update_UpdateNormal_linhnx", obj))
             {
                 while (rd.Read())
@@ -1201,6 +1203,10 @@ namespace docsoft.entities
             if (rd.FieldExists("U_HoatDong_Ten"))
             {
                 Item.HoatDong_Ten = (String)(rd["U_HoatDong_Ten"]);
+            }
+            if (rd.FieldExists("U_Tags"))
+            {
+                Item.Tags = (String)(rd["U_Tags"]);
             }
             if (rd.FieldExists("U_NgayViet"))
             {
@@ -1352,6 +1358,51 @@ namespace docsoft.entities
                 obj[3] = new SqlParameter("Fromdate", DBNull.Value);
             }
             using (IDataReader rd = SqlHelper.ExecuteReader(DAL.con(), CommandType.StoredProcedure, "sp_tblCapNhat_Select_Newest", obj))
+            {
+                while (rd.Read())
+                {
+                    List.Add(getFromReader(rd));
+                }
+            }
+            return List;
+        }
+        public static CapNhatCollection ByTag(SqlConnection con, string Top, string Username, string Fromdate, string Tag)
+        {
+            var List = new CapNhatCollection();
+            var obj = new SqlParameter[5];
+            if (!string.IsNullOrEmpty(Top))
+            {
+                obj[0] = new SqlParameter("Top", Top);
+            }
+            else
+            {
+                obj[0] = new SqlParameter("Top", DBNull.Value);
+            }
+            if (!string.IsNullOrEmpty(Username))
+            {
+                obj[2] = new SqlParameter("Username", Username);
+            }
+            else
+            {
+                obj[2] = new SqlParameter("Username", DBNull.Value);
+            }
+            if (!string.IsNullOrEmpty(Fromdate))
+            {
+                obj[3] = new SqlParameter("Fromdate", Fromdate);
+            }
+            else
+            {
+                obj[3] = new SqlParameter("Fromdate", DBNull.Value);
+            }
+            if (!string.IsNullOrEmpty(Tag))
+            {
+                obj[4] = new SqlParameter("Tag", Tag);
+            }
+            else
+            {
+                obj[4] = new SqlParameter("Tag", DBNull.Value);
+            }
+            using (IDataReader rd = SqlHelper.ExecuteReader(DAL.con(), CommandType.StoredProcedure, "sp_tblCapNhat_Select_ByTag", obj))
             {
                 while (rd.Read())
                 {

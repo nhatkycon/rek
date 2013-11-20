@@ -15,7 +15,7 @@ var rek = {
         rek.FbFn();
         rek.wallFn();
     }
-    , wallFn:function () {
+    , wallFn: function () {
         $(document).on('click', '.post-remove', function () {
             var item = $(this);
             var id = item.attr('data-id');
@@ -37,7 +37,7 @@ var rek = {
                 }
             });
         });
-        
+
         $(document).on('click', '.post-more-btn', function () {
             var item = $(this);
             var id = item.attr('data-id');
@@ -62,25 +62,26 @@ var rek = {
 
     }
     , LoginFn: function (email, name) {
-        var data = { email : email, name: name, subAct : 'login' };
+        var data = { email: email, name: name, subAct: 'login' };
         $.ajax({
             url: rek.url
             , data: data
-            ,success:function () {
+            , success: function () {
                 document.location.reload();
             }
         });
     }
-    ,AddPost:function () {
+    , AddPost: function () {
         var AddVideoDialog = $('.VideoAdd');
         if ($(AddVideoDialog).length < 1) return;
-        
+
         var Url = AddVideoDialog.find('.Url');
         var Ten = AddVideoDialog.find('.Ten');
         var Savebtn = AddVideoDialog.find('.videoSaveBtn');
         var YouTubeView = AddVideoDialog.find('#youtube-view');
         var VideoUrl = AddVideoDialog.find('.VideoUrl');
         var Anh = AddVideoDialog.find('.Anh');
+        var NoiDung = AddVideoDialog.find('.NoiDung');
         var ID = AddVideoDialog.find('.ID');
 
 
@@ -95,14 +96,15 @@ var rek = {
             data.push({ name: 'subAct', value: 'savePost' });
             $.ajax({
                 url: rek.url
+                , type: 'POST'
                , data: data
                , success: function (dt) {
                    document.location.href = domain + '/?ID=' + dt;
                }
             });
         });
-        
-       
+
+
 
         Url.blur(function () {
             var _Url = Url.val();
@@ -120,6 +122,7 @@ var rek = {
                         YouTubeView.attr('src', 'http://www.youtube.com/embed/' + rs.YId);
                         VideoUrl.val(rs.YId);
                         Ten.val(rs.Ten);
+                        NoiDung.val(rs.MoTa);
                         Anh.val(rs.Anh);
                     }
                 });
@@ -136,7 +139,7 @@ var rek = {
                 , data: data
                 , success: function () {
                     FB.logout(function () { document.location.reload(); });
-                    setTimeout(function() {
+                    setTimeout(function () {
                         document.location.reload();
                     }, 2000);
                 }
@@ -190,7 +193,7 @@ var rek = {
                     }
                 }
             });
-        });
+        });
     }
 };
 

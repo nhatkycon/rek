@@ -13,17 +13,17 @@
             </button>
             <a class="navbar-brand" href="/">
                 <span class="rek-logo rek-logo-36">Rek.vn</span>
-                <span class="rek-slogan">funny seconds</span>
+                <span class="rek-slogan">fun</span>
             </a>            
         </div>
         <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
+        <%--<ul class="nav navbar-nav">
                 <%--<li class="active">
                     <a href="#">Home</a>
                 </li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>--%>
-                <%--<li class="dropdown">
+                <li><a href="#contact">Contact</a></li>
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     <li><a href="#">Action</a></li>
@@ -34,8 +34,8 @@
                     <li><a href="#">Separated link</a></li>
                     <li><a href="#">One more separated link</a></li>
                     </ul>
-                </li>--%>
-            </ul>
+                </li>
+            </ul>--%>
             <div class="navbar-form navbar-left">
                 <%if(Security.IsAuthenticated()){ %>
                     <a href="/lib/pages/Rek/Add.aspx" class="btn btn-primary">Đăng video</a>
