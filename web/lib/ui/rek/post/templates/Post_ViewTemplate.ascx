@@ -140,7 +140,7 @@
                     <div class="post-body">
                         <a href="/?ID=<%=Item.ID %>" class="post-title"><%=Item.Ten %></a>
                         <div class="post-video-box video-container">
-                            <iframe width="520" height="293" src="http://www.youtube.com/embed/<%=Item.VideoUrl %>" frameborder="0" allowfullscreen></iframe>                            
+                            <iframe width="520" height="293" src="http://www.youtube.com/embed/<%=Item.VideoUrl %>?autoplay=1" frameborder="0" allowfullscreen></iframe>                            
                         </div>
                         <hr/>
                         <%if(!string.IsNullOrEmpty(Item.Tags)){ %>
