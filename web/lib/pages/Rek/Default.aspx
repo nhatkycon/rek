@@ -3,6 +3,8 @@
 
 <%@ Register src="/lib/ui/rek/post/Newest.ascx" tagname="Newest" tagprefix="uc1" %>
 
+<%@ Register src="/lib/ui/rek/heThong/TagCloud.ascx" tagname="TagCloud" tagprefix="uc2" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <title>
         Rek.vn
@@ -31,6 +33,7 @@
                     <i class="icon icon-share-sign icon-large"></i> Comment để chia sẻ niềm vui bạn xem từ Rek
                 </p>
             </div>
+            <uc2:TagCloud ID="TagCloud1" runat="server" />
         </div>
     </div>
 

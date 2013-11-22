@@ -141,16 +141,16 @@
                 </div>
                 <div class="post-footer">
                     <a href="/?ID=<%=Item.ID %>" class="post-comments">
-                        <i class="glyphicon glyphicon-comment"></i>
-                        <%if (Item.LuotBinhLuan > 0)
-                          { %>
-                            <%= Item.LuotBinhLuan %>&nbsp;
-                        <% }%>
-                    </a>
-                    <a href="/?ID=<%=Item.ID %>" class="post-comments post-fbLikeBox">
                         <i class="glyphicon glyphicon-eye-open"></i>
                         <%=Item.LuotXem %>
                     </a>
+                   
+                        <%if (Item.LuotBinhLuan > 0)
+                          { %>
+                           <a href="/?ID=<%=Item.ID %>" class="post-comments post-fbLikeBox">
+                                <i class="glyphicon glyphicon-comment"></i>  <%= Item.LuotBinhLuan %>&nbsp;
+                            </a>
+                        <% }%>
                     <div class="post-fbLikeBox">                        
                         <div class="fb-like" data-href="http://rek.vn/?ID=<%=Item.ID %>" data-send="true" data-layout="button_count" data-width="120" data-show-faces="false"></div>
                     </div>

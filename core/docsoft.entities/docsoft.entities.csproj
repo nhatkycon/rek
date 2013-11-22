@@ -51,6 +51,7 @@
     <Compile Include="Album.cs" />
     <Compile Include="Comment.cs" />
     <Compile Include="BCY.cs" />
+    <Compile Include="Tags.cs" />
     <Compile Include="SpaHoiDap.cs" />
     <Compile Include="SystemMessage.cs" />
     <Compile Include="HenGio.cs" />

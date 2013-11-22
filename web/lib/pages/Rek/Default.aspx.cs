@@ -16,6 +16,8 @@ public partial class lib_pages_Rek_Default : System.Web.UI.Page
         {
             var listCapNhat = CapNhatDal.Newest(con, "10",  Security.Username, null);
             Newest1.List = listCapNhat;
+            var tags = TagsDal.SelectTop(con, 10);
+            TagCloud1.List = tags;
         }
     }
 }

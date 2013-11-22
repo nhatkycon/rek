@@ -3,12 +3,15 @@
 <%@ Register src="/lib/ui/rek/post/ByTag.ascx" tagname="ByTag" tagprefix="uc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <title>
+    <% =Tag %>        
+    </title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <%if(!string.IsNullOrEmpty(Tag))
       {%>
     <div class="alert alert-success">
-        từ khóa: <span class="rek-logo">Rek.vn</span>
+        từ khóa: <span class="rek-logo"><%=Tag %></span>
     </div>
     <% } %>
     <div class="row">

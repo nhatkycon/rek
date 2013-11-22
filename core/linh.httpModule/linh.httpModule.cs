@@ -449,32 +449,8 @@ namespace linh.httpModule
         {
             string ret = "";
             //   string filenameIMG = _mediaName;
-            MediaHandler _mediahandler = new MediaHandler();
 
-            string rootpath = context.Server.MapPath(context.Request.ApplicationPath);
-            string inputpath = context.Server.MapPath("~/lib/up/v/");
-            string outputpath = context.Server.MapPath("~/lib/up/v/"); // +"\\up\\v";
-            string _ffmpegpath = HttpContext.Current.Server.MapPath("~\\lib\\ffmpeg\\ffmpeg.dll");
-            string filenameIMG = Guid.NewGuid().ToString().Substring(0, 10) + ".jpg";
-
-            _mediahandler.FFMPEGPath = _ffmpegpath;
-            _mediahandler.InputPath = inputpath;
-            _mediahandler.OutputPath = outputpath;
-            _mediahandler.Width = 180;
-            _mediahandler.Height = 130;
-            _mediahandler.Frame_Time = "3";
-            _mediahandler.Image_Format = "jpg";
-            _mediahandler.FileName = _mediaName;
-            _mediahandler.ImageName = filenameIMG;
-            VideoInfo info = _mediahandler.Grab_Thumb();
-
-
-            if (info.ErrorCode > 0 && info.ErrorCode != 121)
-            {
-                return "";
-            }
-            ret = filenameIMG;
-            return filenameIMG;
+            return ret;
         }
 
         public string WMV_encode(HttpContext context, string filename, string width, string height, string bitrate, string samplingrate)

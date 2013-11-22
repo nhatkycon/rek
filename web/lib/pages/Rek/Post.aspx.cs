@@ -11,6 +11,7 @@ using linh.core.dal;
 public partial class lib_pages_Rek_Post : BasedPage
 {
     public string ID { get; set; }
+    public CapNhat Item { get; set; }
     protected void Page_Load(object sender, EventArgs e)
     {
         ID = Request["ID"];
@@ -18,7 +19,7 @@ public partial class lib_pages_Rek_Post : BasedPage
             return;
         using (var con = DAL.con())
         {
-            var Item = CapNhatDal.SelectById(con, new Guid(ID));
+            Item = CapNhatDal.SelectById(con, new Guid(ID));
             Post_ViewTemplate1.Item = Item;
             Title = string.Format("{0} - Rek.vn", Item.Ten);
             

@@ -13,7 +13,7 @@
             </button>
             <a class="navbar-brand" href="/">
                 <span class="rek-logo rek-logo-36">Rek.vn</span>
-                <span class="rek-slogan">fun</span>
+                <span class="rek-slogan">fun video</span>
             </a>            
         </div>
         <div class="navbar-collapse collapse">
@@ -36,23 +36,11 @@
                     </ul>
                 </li>
             </ul>--%>
-            <div class="navbar-form navbar-left">
-                <%if(Security.IsAuthenticated()){ %>
-                    <a href="/lib/pages/Rek/Add.aspx" class="btn btn-primary">Đăng video</a>
-                <%}else{ %>
-                    <a href="javascript:;" class="btn btn-primary loginbtn">
-                        <i class="icon icon-facebook-sign"></i>
-                        Đăng video
-                    </a>
-                <%} %>
-            </div>
+            
             <ul class="nav navbar-nav navbar-right">
               <li>
                   <%if(Security.IsAuthenticated()){ %>
-                  <a href="javascript:;" class="logoutbtn">
-                      Thoát
-                      <i class="icon icon-signout"></i>
-                  </a>
+                  
                   <%}else{ %>
                   <a href="javascript:;" class="loginbtn">
                       Đăng nhập
@@ -66,11 +54,29 @@
                 <ul class="dropdown-menu">
                   <li><a href="/lib/pages/Rek/My.aspx">Rek của tôi</a></li>
                   <li class="divider"></li>
-                  <li><a href="#about" data-toggle="modal">Rek là gì?</a></li>
+                  <li>
+                      <a href="#about" data-toggle="modal">Rek là gì?</a>
+                  </li>
+                    <li>
+                        <a href="javascript:;" class="logoutbtn">
+                              Thoát
+                              <i class="icon icon-signout"></i>
+                          </a>
+                    </li>
                 </ul>
               </li>
             <%} %>
             </ul>
+            <div class="navbar-form navbar-right">
+                <%if(Security.IsAuthenticated()){ %>
+                    <a href="/lib/pages/Rek/Add.aspx" class="btn btn-primary">Đăng video</a>
+                <%}else{ %>
+                    <a href="javascript:;" class="btn btn-primary loginbtn">
+                        <i class="icon icon-facebook-sign"></i>
+                        Đăng video
+                    </a>
+                <%} %>
+            </div>
         </div>
         </div>
     </div>

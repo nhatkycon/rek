@@ -3,6 +3,7 @@
 <%@ Register src="/lib/ui/rek/post/Add.ascx" tagname="Add" tagprefix="uc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <title>Thêm Video - Rek</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <uc1:Add ID="Add1" runat="server" />

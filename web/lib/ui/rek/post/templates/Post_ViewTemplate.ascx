@@ -140,13 +140,14 @@
                     <div class="post-body">
                         <a href="/?ID=<%=Item.ID %>" class="post-title"><%=Item.Ten %></a>
                         <div class="post-video-box video-container">
-                            <iframe width="520" height="293" src="http://www.youtube.com/embed/<%=Item.VideoUrl %>?autoplay=1" frameborder="0" allowfullscreen></iframe>                            
+                            <iframe width="520" height="293" src="http://www.youtube.com/embed/<%=Item.VideoUrl %>" frameborder="0" allowfullscreen></iframe>                            
                         </div>
                         <hr/>
                         <%if(!string.IsNullOrEmpty(Item.Tags)){ %>
+                        <i class="glyphicon glyphicon-tag"></i> Tag: 
                             <% foreach (var item in Item.Tags.Split(','))
                                {%>
-                               <a href="/lib/pages/rek/Tag.aspx?Tag=<%=item %>" class="tag-cloud"><%=item %></a>
+                               <a href="/lib/pages/rek/Tag.aspx?Tag=<%=item %>" class="btn btn-link"><%=item %></a>
                              <%  } %>
                         <%} %>
                         <hr/>
@@ -156,17 +157,6 @@
                     </div>                   
                 </div>
             </div>
-            <meta property="og:title" content="Video: <%=Item.Ten %>" />
-            <meta property="og:description" content="Video <%=Item.Ten %> của bé" />
-            <% if (!string.IsNullOrEmpty(Item.Anh))
-                { %>
-            <meta property="og:image" content="/lib/up/i/<%=Item.Anh %>" />
-            <% }%>
-            <meta property="og:type" content="video">
-            <meta property="og:video" content="http://www.youtube.com/v/<%=Item.VideoUrl %>?autohide=1&amp;version=3">
-            <meta property="og:video:type" content="application/x-shockwave-flash">
-            <meta property="og:video:width" content="640">
-            <meta property="og:video:height" content="360">
             <%break;%>
                 
             <%case 4: %>
@@ -233,22 +223,20 @@
 </div>
 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
     <p class="visible-xs visible-sm hidden-lg hidden-md"><br/></p>
-    
-    
     <div class="post-box effect6">
         <div class="post">
             <div class="well well-small">
                 <a href="javascript:;" class="post-comments">
-                    <i class="glyphicon glyphicon-comment"></i>
-                    <%if (Item.LuotBinhLuan > 0)
-                        { %>
-                        <%= Item.LuotBinhLuan %>&nbsp;
-                    <% }%>
-                </a>
-                <a href="javascript:;" class="post-comments post-fbLikeBox">
                         <i class="glyphicon glyphicon-eye-open"></i>
                         <%=Item.LuotXem %>
+                </a>
+                <%if (Item.LuotBinhLuan > 0)
+                    { %>
+                    <a href="javascript:;" class="post-comments post-fbLikeBox">
+                            <i class="glyphicon glyphicon-comment"></i>
+                            <%= Item.LuotBinhLuan %>&nbsp;
                     </a>
+                <% }%>
                 <span class="post-fbLikeBox">
                     <div class="fb-like" data-href="http://rek.vn/?ID=<%=Item.ID %>" data-send="true" data-layout="button_count" data-width="120" data-show-faces="false"></div>
                 </span>
