@@ -69,11 +69,11 @@
             </ul>
             <div class="navbar-form navbar-right">
                 <%if(Security.IsAuthenticated()){ %>
-                    <a href="/lib/pages/Rek/Add.aspx" class="btn btn-primary">Đăng video</a>
+                    <a href="/lib/pages/Rek/Add.aspx" class="btn btn-primary">Bạn cũng có thể Đăng video</a>
                 <%}else{ %>
                     <a href="javascript:;" class="btn btn-primary loginbtn">
                         <i class="icon icon-facebook-sign"></i>
-                        Đăng video
+                        Bạn cũng có thể Đăng video
                     </a>
                 <%} %>
             </div>

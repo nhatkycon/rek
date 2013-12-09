@@ -2,11 +2,12 @@
 
 <%@ Register src="/lib/ui/rek/post/templates/Post_ViewTemplate.ascx" tagname="Post_ViewTemplate" tagprefix="uc1" %>
 
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <meta property="fb:admins" content="740919195"/>
 <meta property="fb:app_id" content="1391830844393294"/>
-    <meta property="og:title" content="Video: <%=Item.Ten %>" />
-            <meta property="og:description" content="Video <%=Item.NoiDung %>" />
+    <meta property="og:title" content="[Clip] <%=Item.Ten %>" />
+            <meta property="og:description" content="<%=Item.NoiDung %>" />
             <% if (!string.IsNullOrEmpty(Item.Anh))
                 { %>
             <meta property="og:image" content="http://img.youtube.com/vi/<%=Item.VideoUrl %>/hqdefault.jpg" />

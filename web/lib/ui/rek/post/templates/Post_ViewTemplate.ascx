@@ -1,6 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Post_ViewTemplate.ascx.cs" Inherits="lib_ui_rek_post_templates_Post_ViewTemplate" %>
 <%@ Import Namespace="docsoft" %>
 <%@ Import Namespace="linh.common" %>
+<%@ Register src="~/lib/ui/rek/post/Related.ascx" tagname="Related" tagprefix="uc2" %>
 
 
 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
@@ -248,5 +249,6 @@
                     data-width="1000">
             </div>    
         </div>
-                    </div></div>
+    </div>    <uc2:Related ID="Related1" runat="server" />
+</div>
 

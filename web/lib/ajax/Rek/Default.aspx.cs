@@ -28,6 +28,10 @@ public partial class lib_ajax_Rek_Default : BasedPage
         var Tags = Request["Tags"];
         var NoiDung = Request["NoiDung"];
         var FromDate = Request["FromDate"];
+        //if (HttpContext.Current.Request.HttpMethod.ToUpper() != "POST")
+        //{
+        //    rendertext("Method is not allowed");
+        //}
         switch (subAct)
         {
             case "login":
